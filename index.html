@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Seleksi OSIS & MPK</title>
+    <!-- Font Google Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hubungkan ke File CSS External -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="OSIS.png" alt="Logo OSIS" class="logo-osis">
+            <div>OSIS <span>&</span> MPK</div>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Jadwal</a></li>
+            <li><a href="#">Kontak Panitia</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <span class="badge">Pengumuman Resmi</span>
+                <h1>Seleksi Wawancara</h1>
+                <p>OSIS & MPK Periode 2026/2027</p>
+            </div>
+
+            <!-- Form Input Data -->
+            <form id="checkForm">
+                <div class="form-group">
+                    <label for="username">Username / Nama Lengkap</label>
+                    <input type="text" id="username" placeholder="Masukkan username Anda" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="nic">Nomor Induk Calon (NIC)</label>
+                    <input type="text" id="nic" placeholder="Contoh: OSIS001" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="ttl">Tempat, Tanggal Lahir</label>
+                    <input type="text" id="ttl" placeholder="Contoh: Jakarta, 12 Januari 2008" required autocomplete="off">
+                </div>
+
+                <button type="submit" class="btn-submit">Lihat Hasil Seleksi</button>
+                
+                <div id="errorMsg" class="error-msg">
+                    Data tidak cocok. Periksa kembali Username, NIC, dan TTL Anda.
+                </div>
+            </form>
+
+            <!-- 1. HASIL: LOLOS -->
+            <div id="resultLolos" class="result-box lolos">
+                <div class="status-icon">✓</div>
+                <h2>LOLOS TAHAP SELANJUTNYA</h2>
+                <div class="user-details" id="infoLolos"></div>
+                <p class="result-text">
+                    Selamat! Anda telah dinyatakan memenuhi kualifikasi dan lolos ke tahap seleksi selanjutnya. Silakan pantau terus info grup dan siapkan diri Anda untuk agenda pembekalan.
+                </p>
+                <button class="btn-back" onclick="resetForm()">← Periksa Data Lain</button>
+            </div>
+
+            <!-- 2. HASIL: DALAM PEMANTAUAN -->
+            <div id="resultPemantauan" class="result-box pemantauan">
+                <div class="status-icon">👁</div>
+                <h2>DALAM PEMANTAUAN</h2>
+                <div class="user-details" id="infoPemantauan"></div>
+                <p class="result-text">
+                    Status Anda saat ini berada dalam tahap pertimbangan dan pemantauan khusus panitia. Tetap tunjukkan keaktifan dan komitmen Anda selama beberapa hari ke depan.
+                </p>
+                <button class="btn-back" onclick="resetForm()">← Periksa Data Lain</button>
+            </div>
+
+            <!-- 3. HASIL: WAWANCARA SUSULAN -->
+            <div id="resultSusulan" class="result-box susulan">
+                <div class="status-icon">🕒</div>
+                <h2>WAWANCARA SUSULAN</h2>
+                <div class="user-details" id="infoSusulan"></div>
+                <p class="result-text">
+                    Anda dijadwalkan untuk mengikuti Wawancara Susulan / Pendalaman. Harap segera menghubungi panitia seleksi OSIS/MPK untuk mengonfirmasi jadwal terbaru Anda.
+                </p>
+                <button class="btn-back" onclick="resetForm()">← Periksa Data Lain</button>
+            </div>
+
+            <!-- 4. HASIL: TIDAK LOLOS -->
+            <div id="resultTidakLolos" class="result-box tidak-lolos">
+                <div class="status-icon">✕</div>
+                <h2>BELUM LOLOS</h2>
+                <div class="user-details" id="infoTidakLolos"></div>
+                <p class="result-text">
+                    Terima kasih telah berjuang hingga tahap wawancara. Jangan berkecil hati, proses ini adalah awal dari pengalaman yang berharga untuk terus tumbuh dan berkarya.
+                </p>
+                <button class="btn-back" onclick="resetForm()">← Periksa Data Lain</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Panitia Seleksi OSIS & MPK. All rights reserved.</p>
+        <p class="footer-sub">Dikembangkan untuk Sistem Pengumuman Seleksi Siswa</p>
+    </footer>
+
+    <!-- Hubungkan ke File JavaScript External -->
+    <script src="script.js"></script>
+</body>
+</html>
